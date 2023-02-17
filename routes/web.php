@@ -27,7 +27,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/saveForm', [SubmissionsController::class, 'saveForm'])->name('saveForm');
     Route::get('/submissions', [SubmissionsController::class, 'index'])->name('submissions');
     Route::get('delete/{id}', [SubmissionsController::class, 'destroy']);
-    Route::view('/', 'dashboard')->name('dashboard');
+    Route::view('/','homepage')->name('homepage');
+    Route::view('/form','dashboard')->name('dashboard');
 });
 
 require __DIR__.'/auth.php';
